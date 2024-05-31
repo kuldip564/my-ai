@@ -108,7 +108,7 @@ function donef() {
             pp1.innerText = "your numbar is"
             dd.appendChild(pp1);
             dd.appendChild(inp1); 
-            buttt.remove()
+            buttt.remove();
 
         console.log(a);
     }
