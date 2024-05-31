@@ -13,7 +13,7 @@ let done = document.getElementById("inputbut");
 let outputperent = document.getElementById("outputperent");
 
 // create a eliment 
-
+let dd = document.createElement("div");
 let pp = document.createElement("p");
 let pp1 = document.createElement("p");
 let inp = document.createElement("input");
@@ -55,28 +55,29 @@ function but2() {
 }
 
 butin.addEventListener('click', buti);
-butin1.addEventListener("click", but1)
-butin2.addEventListener("click", but2)
+butin1.addEventListener("click", but1);
+butin2.addEventListener("click", but2);
 
 // input a velue and gve output
 
 function donef() {
     if (inputb.value == "GIVE A CODE") {
-        let dd = document.createElement("div");
-        outputperent.appendChild(dd)
-
-        let hh = document.createElement('input');
-        hh.value = "hy"
-        dd.appendChild(hh)
-    }
-    else if (inputb.value == 'ADD YOUR DATA') {
+        inputb.value = "";
         let dd = document.createElement("div");
         outputperent.appendChild(dd);
 
+        let hh = document.createElement('input');
+        hh.value = "hy";
+        dd.appendChild(hh);
+    }
+    else if (inputb.value == 'ADD YOUR DATA') {
+        inputb.value = "";
+        
+        outputperent.appendChild(dd);
         pp.innerText = "enter your name";
         inp1.type = "number";
         dd.appendChild(pp);
-        dd.appendChild(inp)
+        dd.appendChild(inp);
         pp1.innerText = "enter your numbar"
         dd.appendChild(pp1);
         dd.appendChild(inp1);
@@ -87,19 +88,28 @@ function donef() {
             numar.push(inp1.value);
             inp.value = "";
             inp1.value = "";
+            inputb.removeEventListener()
 
         }
         buttt.addEventListener("click", addvalue);
-
     }
     else if (inputb.value == 'SHOW YOUR DETEL') {
-        console.log(namea);
-        console.log(numar);
-        for (let i = 0; i < namea.length; i++) {
-            console.log(namea[i]);
-            a.nam = namea[i]
-            a.numbar = numar[i]
-        }
+        inputb.value = "";
+        console.log(namea,numar);
+            a.nam = namea[0]
+            a.numbar = numar[0]
+            outputperent.appendChild(dd);
+            pp.innerText = "your name is";
+            inp1.type = "number";
+            inp.value = namea[0]
+            inp1.value = numar[0]
+            dd.appendChild(pp);
+            dd.appendChild(inp);
+            pp1.innerText = "your numbar is"
+            dd.appendChild(pp1);
+            dd.appendChild(inp1); 
+            buttt.remove()
+
         console.log(a);
     }
     else {
@@ -107,4 +117,4 @@ function donef() {
     }
 }
 
-done.addEventListener("click", donef)
+done.addEventListener("click", donef);
