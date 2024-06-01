@@ -72,7 +72,8 @@ function donef() {
     }
     else if (inputb.value == 'ADD YOUR DATA') {
         inputb.value = "";
-        
+        inp.value = ""
+        inp1.value = "";
         outputperent.appendChild(dd);
         pp.innerText = "enter your name";
         inp1.type = "number";
