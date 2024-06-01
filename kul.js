@@ -88,8 +88,6 @@ function donef() {
             numar.push(inp1.value);
             inp.value = "";
             inp1.value = "";
-            inputb.removeEventListener()
-
         }
         buttt.addEventListener("click", addvalue);
     }
