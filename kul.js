@@ -28,6 +28,7 @@ let numar = [];
 let a = new Object();
 
 
+
 function but() {
 
     d.style.display = "none";
@@ -116,4 +117,18 @@ function donef() {
     }
 }
 
+
+
 done.addEventListener("click", donef);
+
+async function api() {
+    const api = await fetch('localhost:5000/',(e,d)=>{
+        if (e) {
+           console.log(e); 
+
+        }
+        return d;
+    })
+    console.log(api);
+}
+api()
